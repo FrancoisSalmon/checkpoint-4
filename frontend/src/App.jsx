@@ -13,6 +13,7 @@ import ModifOrDeleteGame from "@pages/ModifOrDeleteGame";
 function App() {
   return (
     <div>
+      <Header />
       <main>
         <Routes>
           <Route path="*" element={<Home />} />
@@ -24,7 +25,6 @@ function App() {
           <Route path="/modif-ou-supprime" element={<ModifOrDeleteGame />} />
         </Routes>
       </main>
-      <Header />
       <Footer />
     </div>
   );

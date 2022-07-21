@@ -1,13 +1,16 @@
 const express = require("express");
 
-const { ItemController } = require("./controllers");
+const { GameController, HardwareController } = require("./controllers");
 
 const router = express.Router();
 
-router.get("/items", ItemController.browse);
-router.get("/items/:id", ItemController.read);
-router.put("/items/:id", ItemController.edit);
-router.post("/items", ItemController.add);
-router.delete("/items/:id", ItemController.delete);
+router.get("/game", GameController.browse);
+router.get("/game/:id", GameController.read);
+router.put("/game/:id", GameController.edit);
+router.post("/game", GameController.add);
+router.delete("/game/:id", GameController.delete);
+
+router.get("/hardware", HardwareController.browse);
+router.get("/hardware/:id", HardwareController.read);
 
 module.exports = router;
