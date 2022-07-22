@@ -21,7 +21,8 @@ export default function Game() {
 
   return (
     <SGame>
-      <p>i'm {`${game.name}`}</p>
+      <h1>{`${game.name}`}</h1>
+      <p>{game.description}</p>
     </SGame>
   );
 }

@@ -22,7 +22,7 @@ export default function Hardware() {
   useEffect(() => {
     setGame(
       games.find((gm) => {
-        return gm.id === Number(id);
+        return gm.hardware_id === Number(id);
       })
     );
   }, [id]);
@@ -32,14 +32,17 @@ export default function Hardware() {
 
   return (
     <SHardware>
-      <p>i'm {`${hardware.name}`}</p>
+      <h1>{`${hardware.name}`}</h1>
       <div>
         <ul className="visible">
-          {games.map((gm) => (
-            <li>
-              <Link to={`/jeux/${gm.id}`}>{gm.name}</Link>
-            </li>
-          ))}
+          {games.map(
+            (gm) =>
+              gm.hardware_id === hardware.id && (
+                <li>
+                  <Link to={`/jeux/${gm.id}`}>{gm.name}</Link>
+                </li>
+              )
+          )}
         </ul>
       </div>
     </SHardware>
