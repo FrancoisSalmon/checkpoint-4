@@ -5,7 +5,7 @@ display: flex;
 flex-direction: column;
 justify-content: flex-start;
 :root{
-  --blue: #004696;
+  --grey: #98999b;
   --yellow: #FCCA26;
   --white: #f2f6fa;
   --white-opacity: #f2f6fa30;
