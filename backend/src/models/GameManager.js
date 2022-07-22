@@ -3,6 +3,13 @@ const AbstractManager = require("./AbstractManager");
 class GameManager extends AbstractManager {
   static table = "game";
 
+  find(id) {
+    return this.connection.query(
+      `SELECT * FROM  ${this.table} WHERE hardware_id = ?`,
+      [id]
+    );
+  }
+
   insert(game) {
     return this.connection.query(
       `INSERT INTO ${GameManager.table} (name, releaseDate, description, hardware_id) values (?,?,?,?)`,
